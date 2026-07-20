@@ -7,4 +7,5 @@
 
 
     <include file="001-create-parameter-table.xml" relativeToChangelogFile="true"/>
+    <include file="002-create-currency-table.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

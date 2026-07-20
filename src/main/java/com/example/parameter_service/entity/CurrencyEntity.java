@@ -1,30 +1,26 @@
 package com.example.parameter_service.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "district")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class DistrictEntity {
+@Table(name = "currency")
+@Data
+public class CurrencyEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "code", length = 3, nullable = false)
+    private String code;
 
-    @Column(nullable = false)
-    private String name;
-
-    @Column(name = "city_id", nullable = false)
-    private Long cityId;
+    @Column(name = "definition", length = 50, nullable = false)
+    private String definition;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
@@ -40,3 +36,4 @@ public class DistrictEntity {
     @Column(name = "updated_by")
     private String updatedBy;
 }
+
