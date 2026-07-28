@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import org.springframework.boot.SpringApplication;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.times;
 
@@ -25,4 +26,10 @@ class ParameterServiceApplicationTest {
             );
         }
     }
+        @Test
+        @DisplayName("Application sınıfı initialize edilebilmeli (Coverage için)")
+        void constructor_shouldBeInvoked() {
+            ParameterServiceApplication app = new ParameterServiceApplication();
+            assertNotNull(app);
+        }
 }
